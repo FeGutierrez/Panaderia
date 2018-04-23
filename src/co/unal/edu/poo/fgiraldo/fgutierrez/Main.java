@@ -30,8 +30,8 @@ public class Main {
         
         elTriunfo.crearProducto("Pan Baggette", "Harina", 1500, 1200, 0);
         elTriunfo.crearProducto("Pan Rollo", "Harina", 200, 180, 0);
-        elTriunfo.anadirCantidadProducto(elTriunfo.getListaproductos().get(0), 30);
-        elTriunfo.anadirCantidadProducto(elTriunfo.getListaproductos().get(1), 30);
+        elTriunfo.anadirCantidadProducto(elTriunfo.getListaproductos().get(0), 50);
+        elTriunfo.anadirCantidadProducto(elTriunfo.getListaproductos().get(1), 50);
         
         System.out.println("ANTES VENTA");
         System.out.println(elTriunfo.listarProductos());
@@ -46,12 +46,10 @@ public class Main {
         elTriunfo.getListafacturas().get(0).anadirVenta(elTriunfo.getListaproductos().get(1), 10, "Menor");
         
         elTriunfo.crearFactura(e2, date, "Andrea");
-        elTriunfo.getListafacturas().get(1).anadirVenta(elTriunfo.getListaproductos().get(0), 5, "Mayor");
+        elTriunfo.getListafacturas().get(1).anadirVenta(elTriunfo.getListaproductos().get(1), 5, "Mayor");
         elTriunfo.getListafacturas().get(1).anadirVenta(elTriunfo.getListaproductos().get(1), 15, "Menor");
 
-
-        System.out.println( elTriunfo.getListafacturas().get(0).informacionFactura());
-        System.out.println( elTriunfo.getListafacturas().get(1).informacionFactura());
+        System.out.println( elTriunfo.listarFacturas());
         
         System.out.println("GANANCIAS");
         System.out.println(elTriunfo.ganaciasTotalesVentas());

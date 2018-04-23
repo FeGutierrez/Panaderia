@@ -87,6 +87,14 @@ public class Panaderia {
         return info;
     }
     
+    public String listarFacturas(){
+        String info = "\nInformación de los productos registrados: \n";
+        for (int i = 0; i < this.listafacturas.size(); i++) {
+            info += this.listafacturas.get(i).informacionFactura()+ "\n"; 
+        }
+        return info;
+    }
+    
     public boolean cambiarPrecioProductos(Producto producto, double precioUnitario, double PrecioMayor){
         producto.setPrecioBaseUnidad(precioUnitario);
         producto.setPrecioBasePorMayor(PrecioMayor);

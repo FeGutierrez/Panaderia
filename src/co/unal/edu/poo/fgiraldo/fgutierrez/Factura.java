@@ -106,6 +106,7 @@ public class Factura {
         String a = "\nInfo factura: " + "Cliente: "+ this.getCliente() +"\n";
         
         for (int i = 0; i < this.listaventas.size(); i++) {
+            
             double precioFacturado = 0;
             if (this.listaventas.get(i).getTipoVenta().equals("Mayor") || this.listaventas.get(i).getTipoVenta().equals("mayor") || this.listaventas.get(i).getTipoVenta().equals("MAYOR")) {
                 precioFacturado = this.listaventas.get(i).getProducto().getPrecioConDctoBasePorMayor();
@@ -113,11 +114,14 @@ public class Factura {
             if (this.listaventas.get(i).getTipoVenta().equals("Menor") || this.listaventas.get(i).getTipoVenta().equals("menor") || this.listaventas.get(i).getTipoVenta().equals("MENOR")) {
                 precioFacturado = this.listaventas.get(i).getProducto().getPrecioConDctoBaseUnidad();
             }
+            
             this.montoTotalFactura();
+            
             a += "Producto vendido: " +this.listaventas.get(i).getProducto().getNombre() +" Precio de venta: " +  precioFacturado + " Cantidad vendida: " + this.listaventas.get(i).getCantidad() + " Tipo venta: "+ this.listaventas.get(i).getTipoVenta()
-                    + " Subtotal: "+ this.listaventas.get(i).getSubTotal() + "\n";
+                    + " Subtotal: "+ this.listaventas.get(i).getSubTotal() +"\n";
+            
         }
-        return a + " \nPrecio total: " + this.getPrecioFinal();
+        return a + " \nPrecio total: " + this.getPrecioFinal()+ "\n";
     }
     
 }
